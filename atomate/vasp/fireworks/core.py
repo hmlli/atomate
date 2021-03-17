@@ -205,7 +205,7 @@ class ScanOptimizeFW(Firework):
                 has_previous_calc = True
                 # Copy the CHGCAR from previous calc location (usually PBE)
                 t.append(CopyVaspOutputs(calc_loc=prev_calc_loc,
-                                         contcar_to_poscar=True, 
+                                         contcar_to_poscar=True,
                                          additional_files=["CHGCAR"]
                                          )
                          )
@@ -1225,7 +1225,7 @@ class NEBRelaxationFW(Firework):
                 user_kpoints_settings=user_kpoints_settings,
             )
         else:  # label == "ep0" or "ep1"
-            from pymatgen_diffusion.neb.io import MVLCINEBEndPointSet
+            from pymatgen.analysis.diffusion.neb.io import MVLCINEBEndPointSet
 
             vasp_input_set = MVLCINEBEndPointSet(
                 structure,
